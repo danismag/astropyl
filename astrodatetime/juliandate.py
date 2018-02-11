@@ -1,4 +1,5 @@
 from math import *
+from astrodatetime.correctdate import *
 
 """"
     Перевод даты в юлианские дни
@@ -9,15 +10,9 @@ from math import *
 
 
 def juliandate(day, month, year):
-    # Проверка корректности аргументов
-    if year != floor(year):
-        raise ValueError("Год должен быть целым числом")
-    if month not in range(1, 13):
-        raise ValueError("Месяц должен быть в диапазоне 1-12")
-    if month != floor(month):
-        raise ValueError("Месяц не может быть дробным")
-    if day < 0 or day >= 32:
-        raise ValueError("Дата должна быть в диапазоне 0-31")
+
+    # Проверка корректности аргументов, выброс исключений
+    correctdate(day, month, year)
 
     # Проверека на григорианское летоисчисление
     if (year + month/12 + day/365) >= 1582 + 10/12 + 15/365:

@@ -5,5 +5,7 @@ from math import *
 """
 
 
-def dayoftheweek():
-    pass
+def dayoftheweek(day, month, year):
+    result = []
+
+    return result
