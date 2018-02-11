@@ -8,7 +8,7 @@ from math import *
 """
 
 
-def juliandate(year, month, day):
+def juliandate(day, month, year):
     # Проверка корректности аргументов
     if year != floor(year):
         raise ValueError("Год должен быть целым числом")
